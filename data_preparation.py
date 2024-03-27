@@ -19,4 +19,4 @@ def prepared_data():
     Y = filtered_ratings.pivot_table(index='ISBN', columns='User-ID',
                                      values='Book-Rating')
     R = Y.notna().astype(int)
-    return prep_books, ratings, users, Y, R
+    return prep_books, ratings, users, Y.values, R.values
