@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 books = pd.read_csv('./data/books.csv')
 ratings = pd.read_csv('./data/ratings.csv')
@@ -20,7 +19,4 @@ def prepared_data():
     Y = filtered_ratings.pivot_table(index='ISBN', columns='User-ID',
                                      values='Book-Rating')
     R = Y.notna().astype(int)
-    book_features = np.random.randn(Y.shape[0], n)
-    user_features = np.random.randn(Y.shape[1], n)
-
-    return prep_books, ratings, users, Y, R, user_features, book_features
+    return prep_books, ratings, users, Y, R
