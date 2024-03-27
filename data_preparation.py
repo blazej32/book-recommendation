@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
 
-books = pd.read_csv('../data/books.csv')
-ratings = pd.read_csv('../data/ratings.csv')
-users = pd.read_csv('../data/users.csv')
+books = pd.read_csv('./data/books.csv')
+ratings = pd.read_csv('./data/ratings.csv')
+users = pd.read_csv('./data/users.csv')
 
 
-def prepared_data(n):
+def prepared_data():
     prep_books = books.drop(columns=["Publisher", "Image-URL-S", "Image-URL-M",
                                      "Image-URL-L"])
 
