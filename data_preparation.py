@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 books = pd.read_csv('./data/books.csv')
 ratings = pd.read_csv('./data/ratings.csv')
@@ -20,3 +21,17 @@ def prepared_data():
                                      values='Book-Rating')
     R = Y.notna().astype(int)
     return prep_books, ratings, users, Y.values, R.values
+
+
+def create_ratings_array(ratings_dict, y):
+    num_books = y.shape[0]
+    ratings_array = np.empty((num_books,))
+
+    for i in range(num_books):
+        isbn = books[i]['isbn']
+        if isbn in ratings_dict:
+            ratings_array[i] = ratings_dict[isbn]
+        else:
+            ratings_array[i] = np.nan
+
+    return ratings_array
