@@ -14,11 +14,7 @@ The project consists of several stages:
 
 4. **Recommendation Generation**: The trained model is used to generate book recommendations.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Installation
+## Installation
 
 1. Clone the repo: `git clone https://github.com/your_username_/Project-Name.git`
 2. Install Python packages: `pip install -r requirements.txt`
